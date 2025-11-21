@@ -1,0 +1,128 @@
+
+### Get all genres
+GET http://localhost:8080/api/genres
+Accept: application/json
+
+> {%
+    client.test("Response code is 200 OK", () => client.assert(response.status === 200));
+    client.global.set("firstGenreId", jsonPath(response.body, "$[0].id"));
+%}
+
+
+### Get genre by id
+GET http://localhost:8080/api/genres/ddf2e0ea-9cbe-41d3-afd9-ac2af7eb632d
+Accept: application/json
+
+> {%
+    client.test("Response code is 200 OK", () => client.assert(response.status === 200));
+    client.test("Genre is returned", () => client.assert(jsonPath(response.body, "$.id") === client.global.get("firstGenreId")));
+%}
+
+
+### Add genre
+POST http://localhost:8080/api/genres
+Content-Type: application/json
+
+{
+  "name": "Alternative rock"
+}
+
+> {%
+    client.test("Response code is 201 CREATED", () => client.assert(response.status === 201));
+    client.global.set("addedGenreId", jsonPath(response.body, "$.id"));
+%}
+
+
+### Update genre
+PUT http://localhost:8080/api/genres/cafb53ad-1b31-44b5-9428-92488d207e26
+Content-Type: application/json
+
+{
+  "name": "Rock Updated"
+}
+
+> {%
+    client.test("Response code is 200 OK", () => client.assert(response.status === 200));
+    client.test("Genre name is updated", () => client.assert(jsonPath(response.body, "$.name") === "Rock Updated"));
+%}
+
+
+### Delete genre
+DELETE http://localhost:8080/api/genres/cafb53ad-1b31-44b5-9428-92488d207e26
+Accept: application/json
+
+> {%
+    client.test("Response code is 204 NO CONTENT", () => client.assert(response.status === 204));
+%}
+
+
+
+### Get all songs
+GET http://localhost:8080/api/songs
+Accept: application/json
+
+> {%
+    client.test("Response code is 200 OK", () => client.assert(response.status === 200));
+    client.global.set("firstSongId", jsonPath(response.body, "$[0].id"));
+%}
+
+
+### Get song by id
+GET http://localhost:8080/api/songs/a734c4c1-aace-4f4f-a93e-8771b1520fab
+Accept: application/json
+
+> {%
+    client.test("Response code is 200 OK", () => client.assert(response.status === 200));
+    client.test("Song is returned", () => client.assert(jsonPath(response.body, "$.id") === client.global.get("firstSongId")));
+%}
+
+
+### Add song
+POST http://localhost:8080/api/genres/034f421d-3381-4e94-9fde-d11f642a2824/songs
+Content-Type: application/json
+
+{
+  "title": "Sky",
+  "artist": "I",
+  "durationSeconds": 200
+}
+
+> {%
+    client.test("Response code is 201 CREATED", () => client.assert(response.status === 201));
+    client.global.set("addedSongId", jsonPath(response.body, "$.id"));
+%}
+
+
+### Update song
+PUT http://localhost:8080/api/songs/16f4dde5-0c64-42f1-9058-8141e530e52a
+Content-Type: application/json
+
+{
+  "title": "Bohemian Rhapsody (Remastered)",
+  "artist": "Queen",
+  "durationSeconds": 360
+}
+
+> {%
+    client.test("Response code is 200 OK", () => client.assert(response.status === 200));
+    client.test("Song title is updated", () => client.assert(jsonPath(response.body, "$.title") === "Bohemian Rhapsody (Remastered)"));
+%}
+
+
+### Delete song
+DELETE http://localhost:8080/api/songs/16f4dde5-0c64-42f1-9058-8141e530e52a
+Accept: application/json
+
+> {%
+    client.test("Response code is 204 NO CONTENT", () => client.assert(response.status === 204));
+%}
+
+
+### Get songs by genre
+GET http://localhost:8080/api/genres/034f421d-3381-4e94-9fde-d11f642a2824/songs
+Accept: application/json
+
+> {%
+    client.test("Response code is 200 OK", () => client.assert(response.status === 200));
+%}
+
