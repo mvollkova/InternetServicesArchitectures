@@ -1,0 +1,15 @@
+// Status: 400, time: 12ms, size: 133 B
+### 5.
+DELETE http://localhost:8081/api/genres/ВАШ_UUID_AMBIENT HTTP/1.1
+connection: close
+content-type: application/json
+date: Tue, 02 Dec 2025 22:57:57 GMT
+transfer-encoding: chunked
+
+{
+  "timestamp": "2025-12-02T22:57:57.944+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "path": "/api/genres/%D0%92%D0%90%D0%A8_UUID_AMBIENT"
+}
+>> C:\Users\mv\Documents\lab4\.idea\httpClient\12-02\5.\2025-12-02T235758.json

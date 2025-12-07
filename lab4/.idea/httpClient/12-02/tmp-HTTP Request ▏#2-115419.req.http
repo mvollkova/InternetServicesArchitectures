@@ -1,0 +1,5 @@
+// Size: 0 B
+### HTTP Request ▏#2
+DELETE http://localhost:8081/api/genres/71e19bde-26e1-42bb-8637-fa9b588c0498 HTTP/1.1
+Content-Length: 0
+
