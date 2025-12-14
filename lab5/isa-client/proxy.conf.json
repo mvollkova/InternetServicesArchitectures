@@ -1,0 +1,16 @@
+{
+  "/api-genre": {
+    "target": "http://localhost:8081", 
+    "secure": false,
+    "pathRewrite": {
+      "^/api-genre": ""
+    }
+  },
+  "/api-song": {
+    "target": "http://localhost:8082",
+    "secure": false,
+    "pathRewrite": {
+      "^/api-song": ""
+    }
+  }
+}

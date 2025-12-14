@@ -1,0 +1,18 @@
+<h2>Genre List</h2>
+
+<button routerLink="/genres/add">Add New Genre</button>
+
+<div *ngIf="genres.length === 0">
+    <p>Loading...</p>
+</div>
+
+<ul>
+  <li *ngFor="let genre of genres">
+    <span style="font-weight: bold;">{{ genre.name }}</span> (ID: {{ genre.id }})
+
+    <button routerLink="/genres/{{ genre.id }}">Details</button>
+    <button routerLink="/genres/edit/{{ genre.id }}">Edit</button>
+
+    <button style="color: red;" (click)="removeGenre(genre.id)">Delete</button>
+  </li>
+</ul>

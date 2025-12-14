@@ -1,0 +1,23 @@
+ul {
+    list-style: none; 
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+li span {
+    flex-grow: 1; 
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
