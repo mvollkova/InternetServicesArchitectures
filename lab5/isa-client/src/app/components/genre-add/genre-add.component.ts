@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { GenreService } from '../../services/genre.service';
 
 @Component({
   selector: 'app-genre-add',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
-  templateUrl: './genre-add.component.html',
-  styleUrls: ['./genre-add.component.css']
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule
+  ],
+  templateUrl: './genre-add.component.html'
 })
-export class GenreAddComponent implements OnInit {
+export class GenreAddComponent {
+
   genreForm: FormGroup;
 
   constructor(
@@ -24,25 +28,11 @@ export class GenreAddComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
-
   onSubmit(): void {
     if (this.genreForm.valid) {
-      this.genreService.createGenre(this.genreForm.value)
-      .subscribe({
-        next: () => {
-          this.genreService.notifyGenresUpdated();
-          this.router.navigate(['/genres']); 
-        },
-        error: (err) => {
-          console.error('Error creating genre:', err);
-        }
+      this.genreService.addGenre(this.genreForm.value).subscribe(() => {
+        this.router.navigate(['/genres']);
       });
     }
-  }
-
-  get name() {
-    return this.genreForm.get('name');
   }
 }
