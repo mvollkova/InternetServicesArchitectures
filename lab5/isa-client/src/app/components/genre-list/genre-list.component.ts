@@ -16,23 +16,32 @@ export class GenreListComponent implements OnInit {
   constructor(private genreService: GenreService) { }
 
   ngOnInit(): void {
-    this.loadGenres(); 
-  }
+  this.loadGenres(); 
+
+  this.genreService.genresUpdated$.subscribe(() => {
+    this.loadGenres();
+  });
+}
 
   loadGenres(): void {
+    console.log('loadGenres called');
     this.genreService.getGenres().subscribe({
       next: (data: Genre[]) => {
+        console.log('genres from API:', data);
         this.genres = data;
       },
       error: (err) => console.error('Error loading genres:', err)
     });
   }
+  trackById(index: number, genre: Genre): string {
+     return genre.id;
+  }
 
-  removeGenre(id: number): void {
+  removeGenre(id: string): void {
     if (confirm('Are you sure?')) {
       this.genreService.deleteGenre(id).subscribe({
         next: () => {
-          this.loadGenres();
+          console.log('Genre deleted successfully.');
         },
         error: (err) => console.error('Error deleting genre:', err)
       });

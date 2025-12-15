@@ -1,0 +1,18 @@
+<h2>Add New Genre</h2>
+
+<form [formGroup]="genreForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="name">Genre Name:</label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div *ngIf="genreForm.get('name')?.invalid && genreForm.get('name')?.touched" style="color: red;">
+    Genre Name is required.
+  </div>
+
+  <button type="submit" [disabled]="genreForm.invalid">Save Genre</button>
+  
+  <button type="button" routerLink="/genres">Cancel</button>
+
+</form>
