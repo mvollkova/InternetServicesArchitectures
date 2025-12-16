@@ -1,5 +1,5 @@
 
-POST http://localhost:8081/api/genres
+POST http://localhost:8080/api/
 Content-Type: application/json
 
 {
@@ -14,6 +14,6 @@ DELETE http://localhost:8081/api/genres/11500124-8411-469c-8ffc-5dce0757608b
 
 
 ###
-GET http://localhost:8082/api/songs
+GET http://localhost:8080/api/genres
 
 
