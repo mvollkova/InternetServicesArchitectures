@@ -1,0 +1,14 @@
+// Status: 404, time: 20ms, size: 119 B
+### HTTP Request ▏#3
+GET http://localhost:8080/songs HTTP/1.1
+content-length: 119
+content-type: application/json
+
+{
+  "timestamp": "2025-12-16T20:08:04.720+00:00",
+  "path": "/songs",
+  "status": 404,
+  "error": "Not Found",
+  "requestId": "713d2808-3"
+}
+>> C:\lab1_AUI\Web-service-architectures\lab4\.idea\httpClient\12-16\HTTP Request ▏#3\2025-12-16T210804.json

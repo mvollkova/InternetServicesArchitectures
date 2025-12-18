@@ -1,0 +1,15 @@
+// Status: 400, time: 14ms, size: 132 B
+### HTTP Request ▏#2
+DELETE http://localhost:8081/api/genres/ВАШ_UUID_TRANCE HTTP/1.1
+connection: close
+content-type: application/json
+date: Tue, 02 Dec 2025 22:54:01 GMT
+transfer-encoding: chunked
+
+{
+  "timestamp": "2025-12-02T22:54:01.377+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "path": "/api/genres/%D0%92%D0%90%D0%A8_UUID_TRANCE"
+}
+>> C:\Users\mv\Documents\lab4\.idea\httpClient\12-02\HTTP Request ▏#2\2025-12-02T235401.json

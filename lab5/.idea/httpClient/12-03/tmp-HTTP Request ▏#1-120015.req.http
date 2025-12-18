@@ -1,0 +1,9 @@
+// Size: 25 B
+### HTTP Request ▏#1
+POST http://localhost:8081/api/genres HTTP/1.1
+Content-Type: application/json
+Content-Length: 25
+
+{
+    "name": "Ambient"
+}

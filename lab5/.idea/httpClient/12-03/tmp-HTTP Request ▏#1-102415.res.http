@@ -1,0 +1,12 @@
+// Status: 201, time: 94ms, size: 66 B
+### HTTP Request ▏#1
+POST http://localhost:8081/api/genres HTTP/1.1
+content-type: application/json
+date: Wed, 03 Dec 2025 09:24:15 GMT
+transfer-encoding: chunked
+
+{
+  "id": "d606e3bb-085f-4814-9d45-6a8eb7a79242",
+  "name": "alternative"
+}
+>> C:\Users\mv\Documents\lab4\.idea\httpClient\12-03\HTTP Request ▏#1\2025-12-03T102415.json
