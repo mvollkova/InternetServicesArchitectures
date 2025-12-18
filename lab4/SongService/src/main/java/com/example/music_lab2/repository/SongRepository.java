@@ -13,5 +13,8 @@ public interface SongRepository extends JpaRepository<Song, UUID> {
 
     List<Song> findByGenreId(UUID genreId);
 
+    List<Song> findAllByGenre_Id(UUID genreId);
+
     void deleteByGenreId(UUID genreId);
+
 }

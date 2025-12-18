@@ -7,18 +7,21 @@ public class SongListDto {
     private final UUID id;
     private final String title;
     private final String artist;
+    private final int durationSeconds;
 
-    public SongListDto(UUID id, String title, String artist) {
+    public SongListDto(UUID id, String title, String artist, int durationSeconds) {
         this.id = id;
         this.title = title;
         this.artist = artist;
+        this.durationSeconds = durationSeconds;
     }
 
     public static SongListDto fromEntity(Song entity) {
         return new SongListDto(
                 entity.getId(),
                 entity.getTitle(),
-                entity.getArtist()
+                entity.getArtist(),
+                entity.getDurationSeconds() // Маппинг из сущности
         );
     }
 
@@ -32,5 +35,9 @@ public class SongListDto {
 
     public String getArtist() {
         return artist;
+    }
+
+    public int getDurationSeconds() {
+        return durationSeconds;
     }
 }
