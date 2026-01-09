@@ -1,0 +1,42 @@
+<section class="header">
+  <div>
+    <h2>Genre details</h2>
+    <p *ngIf="genre"><strong>ID:</strong> {{genre.id}}</p>
+    <p *ngIf="genre"><strong>Name:</strong> {{genre.name}}</p>
+  </div>
+
+  <div class="actions">
+    <a class="btn" [routerLink]="['/genres', id, 'edit']">Edit genre</a>
+    <a class="btn" [routerLink]="['/genres', id, 'songs', 'new']">+ Add song</a>
+  </div>
+</section>
+
+<p *ngIf="loadingGenre || loadingSongs">Loading...</p>
+<p *ngIf="error" class="error">{{error}}</p>
+
+<h3>Songs in this genre</h3>
+
+<table class="table" *ngIf="!loadingSongs">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Duration</th>
+      <th style="width: 320px">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of songs">
+      <td>{{s.title}}</td>
+      <td>{{s.artist}}</td>
+      <td>{{s.durationSeconds}}s</td>
+      <td>
+        <a class="link" [routerLink]="['/genres', id, 'songs', s.id]">Details</a>
+        <a class="link" [routerLink]="['/genres', id, 'songs', s.id, 'edit']">Edit</a>
+        <button class="danger" (click)="removeSong(s.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<a routerLink="/genres">← Back to list</a>

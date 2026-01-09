@@ -1,5 +1,0 @@
-// Size: 0 B
-### 5.
-DELETE http://localhost:8081/api/genres/406b3942-160b-4fc0-9069-92ad0be31efd HTTP/1.1
-Content-Length: 0
-

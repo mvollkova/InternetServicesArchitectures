@@ -1,0 +1,15 @@
+<h2>Add genre</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <label>
+    Name
+    <input formControlName="name" />
+  </label>
+
+  <div class="actions">
+    <a routerLink="/genres">Cancel</a>
+    <button type="submit" [disabled]="form.invalid || saving">Save</button>
+  </div>
+
+  <p *ngIf="error" class="error">{{error}}</p>
+</form>

@@ -1,7 +1,0 @@
-// Status: 204, time: 13ms, size: 0 B
-### 5.
-DELETE http://localhost:8081/api/genres/406b3942-160b-4fc0-9069-92ad0be31efd HTTP/1.1
-date: Tue, 02 Dec 2025 22:58:19 GMT
-
-
->> C:\Users\mv\Documents\lab4\.idea\httpClient\12-02\5.\2025-12-02T235819.txt

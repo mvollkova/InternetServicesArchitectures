@@ -1,0 +1,17 @@
+<h2>Edit genre</h2>
+
+<p *ngIf="loading">Loading...</p>
+
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <label>
+    Name
+    <input formControlName="name" />
+  </label>
+
+  <div class="actions">
+    <a [routerLink]="['/genres', id]">Cancel</a>
+    <button type="submit" [disabled]="form.invalid || saving">Save</button>
+  </div>
+
+  <p *ngIf="error" class="error">{{error}}</p>
+</form>

@@ -1,0 +1,17 @@
+<h2>Song details</h2>
+
+<p *ngIf="loading">Loading...</p>
+<p *ngIf="error" class="error">{{error}}</p>
+
+<div *ngIf="song" class="card">
+  <p><strong>ID:</strong> {{song.id}}</p>
+  <p><strong>Title:</strong> {{song.title}}</p>
+  <p><strong>Artist:</strong> {{song.artist}}</p>
+  <p><strong>Duration:</strong> {{song.durationSeconds}}s</p>
+  <p><strong>Genre:</strong> {{song.genre?.name}} ({{song.genre?.id}})</p>
+
+  <div class="actions">
+    <a class="btn" [routerLink]="['/genres', genreId, 'songs', songId, 'edit']">Edit</a>
+    <a class="btn" [routerLink]="['/genres', genreId]">Back to genre</a>
+  </div>
+</div>

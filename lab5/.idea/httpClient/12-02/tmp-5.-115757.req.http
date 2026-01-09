@@ -1,5 +1,0 @@
-// Size: 0 B
-### 5.
-DELETE http://localhost:8081/api/genres/ВАШ_UUID_AMBIENT HTTP/1.1
-Content-Length: 0
-

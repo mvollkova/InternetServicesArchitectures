@@ -1,9 +1,0 @@
-// Status: 200, time: 177ms, size: 2 B
-### 2. (SongService)
-GET http://localhost:8082/api/songs HTTP/1.1
-content-type: application/json
-date: Tue, 02 Dec 2025 22:57:29 GMT
-transfer-encoding: chunked
-
-[]
->> C:\Users\mv\Documents\lab4\.idea\httpClient\12-02\2. (SongService)\2025-12-02T235729.json

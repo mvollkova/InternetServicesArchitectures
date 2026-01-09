@@ -1,5 +1,0 @@
-// Size: 0 B
-### 1. df
-GET http://localhost:8081/api/genres HTTP/1.1
-Content-Length: 0
-
