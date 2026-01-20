@@ -1,27 +1,33 @@
-# Angular
+# Docker & Docker Compose 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+This project focuses on the containerization of a microservice-based architecture, consisting of an Angular frontend and two Spring Boot backend applications.
 
-## Development server
+## Completed Tasks
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Angular Frontend (NGINX)**: 
+   - Created a multi-stage `Dockerfile` for building the Angular app and serving it via **NGINX**.
+   - Configured NGINX to act as a web server on port 80.
+2. **Categories Microservice (Spring Boot)**:
+   - Containerized using the **Eclipse Temurin** image.
+   - Configured via environment variables for flexible deployment.
+3. **Elements Microservice (Spring Boot)**:
+   - Containerized using the **Eclipse Temurin** image.
+   - Configured via environment variables and exposed on a dedicated port.
+4. **Orchestration (Docker Compose)**:
+   - Created a `docker-compose.yml` file to manage all three containers simultaneously.
+   - Configured service networking, port mapping, and environment synchronization.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Accessing the Services:
+Frontend (Angular): http://localhost (Port 80)
 
-## Build
+Categories API: http://localhost:8081/api/genres
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Elements API: http://localhost:8082/api/songs
 
-## Running unit tests
+## Deployment Instructions
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To start the entire system with a single command, run:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+docker-compose up --build
