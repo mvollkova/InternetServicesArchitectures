@@ -1,0 +1,25 @@
+services:
+  categories-app:
+    build: ./GenreService
+    ports:
+      - "8081:8080"
+    environment:
+      - SERVER_PORT=8080
+      - SONG_SERVICE_URL=http://elements-app:8080
+    depends_on:
+      - elements-app
+
+  elements-app:
+    build: ./SongService
+    ports:
+      - "8082:8080"
+    environment:
+      - SERVER_PORT=8080
+
+  angular-app:
+    build: ./angular
+    ports:
+      - "80:80"
+    depends_on:
+      - categories-app
+      - elements-app

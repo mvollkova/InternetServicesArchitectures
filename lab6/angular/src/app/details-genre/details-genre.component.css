@@ -1,0 +1,8 @@
+.header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:12px;}
+.actions{display:flex;gap:12px;}
+.btn{padding:6px 10px;border:1px solid #333;border-radius:6px;text-decoration:none;white-space:nowrap;}
+.table{width:100%;border-collapse:collapse;margin-bottom:12px;}
+.table th,.table td{border:1px solid #ddd;padding:8px;}
+.link{margin-right:10px;}
+.danger{padding:6px 10px;border:1px solid #b00020;border-radius:6px;background:transparent;cursor:pointer;}
+.error{color:#b00020;}

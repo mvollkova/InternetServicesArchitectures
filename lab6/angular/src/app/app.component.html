@@ -1,0 +1,17 @@
+<header class="container">
+  <h1>{{ title }}</h1>
+
+  <nav class="nav">
+    <a
+      routerLink="/genres"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Genres
+    </a>
+  </nav>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

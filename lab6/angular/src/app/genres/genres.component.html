@@ -1,0 +1,26 @@
+<section class="header">
+  <h2>Genres (Gatunki)</h2>
+  <a class="btn" routerLink="/genres/new">+ Add genre</a>
+</section>
+
+<p *ngIf="loading">Loading...</p>
+<p *ngIf="error" class="error">{{error}}</p>
+
+<table *ngIf="!loading" class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th style="width: 280px">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let g of genres">
+      <td>{{ g.name }}</td>
+      <td>
+        <a class="link" [routerLink]="['/genres', g.id]">Details</a>
+        <a class="link" [routerLink]="['/genres', g.id, 'edit']">Edit</a>
+        <button class="danger" (click)="remove(g.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

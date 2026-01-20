@@ -1,0 +1,25 @@
+<h2>Add song to genre</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <label>
+    Title
+    <input formControlName="title" />
+  </label>
+
+  <label>
+    Artist
+    <input formControlName="artist" />
+  </label>
+
+  <label>
+    Duration (seconds)
+    <input type="number" formControlName="durationSeconds" />
+  </label>
+
+  <div class="actions">
+    <a [routerLink]="['/genres', genreId]">Cancel</a>
+    <button type="submit" [disabled]="form.invalid || saving">Save</button>
+  </div>
+
+  <p *ngIf="error" class="error">{{error}}</p>
+</form>

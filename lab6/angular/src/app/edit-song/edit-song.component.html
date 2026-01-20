@@ -1,0 +1,27 @@
+<h2>Edit song</h2>
+
+<p *ngIf="loading">Loading...</p>
+
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <label>
+    Title
+    <input formControlName="title" />
+  </label>
+
+  <label>
+    Artist
+    <input formControlName="artist" />
+  </label>
+
+  <label>
+    Duration (seconds)
+    <input type="number" formControlName="durationSeconds" />
+  </label>
+
+  <div class="actions">
+    <a [routerLink]="['/genres', genreId, 'songs', songId]">Cancel</a>
+    <button type="submit" [disabled]="form.invalid || saving">Save</button>
+  </div>
+
+  <p *ngIf="error" class="error">{{error}}</p>
+</form>

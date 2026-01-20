@@ -1,0 +1,4 @@
+.card{border:1px solid #ddd;border-radius:8px;padding:12px;max-width:520px;}
+.actions{display:flex;gap:12px;margin-top:12px;}
+.btn{padding:6px 10px;border:1px solid #333;border-radius:6px;text-decoration:none;}
+.error{color:#b00020;}
